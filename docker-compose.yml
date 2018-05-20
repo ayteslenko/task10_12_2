@@ -1,0 +1,12 @@
+version: '2'
+services:
+  nginx:
+    image: nginx:1.13
+    ports:
+     - 17080:443
+    volumes:
+     - /home/user/task10_12_2/etc:/etc/nginx/conf.d
+     - /home/user/task10_12_2/certs:/etc/ssl/certs
+     - /srv/log/nginx:/var/log/nginx
+  apache:
+    image: httpd:2.4
